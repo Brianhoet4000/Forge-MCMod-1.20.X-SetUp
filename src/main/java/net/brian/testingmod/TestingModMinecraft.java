@@ -1,10 +1,14 @@
 package net.brian.testingmod;
 
 import com.mojang.logging.LogUtils;
+import net.brian.testingmod.item.ModCreativeModTabs;
+import net.brian.testingmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -20,12 +24,16 @@ import org.slf4j.Logger;
 public class TestingModMinecraft
 {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "testingmodminecraft";
+    public static final String MOD_ID = "testingmod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     public TestingModMinecraft()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+
 
         modEventBus.addListener(this::commonSetup);
 
@@ -43,7 +51,11 @@ public class TestingModMinecraft
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
