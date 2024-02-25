@@ -5,6 +5,11 @@
   "block.testingmod.sapphire_block": "Block of Sapphire",
   "block.testingmod.raw_sapphire_block": "Block of Raw Sapphire",
 
+  "block.testingmod.sapphire_ore": "Sapphire Ore",
+  "block.testingmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.testingmod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
+  "block.testingmod.nether_sapphire_ore": "Nether Sapphire Ore",
+
 
   "creativetab.tutorial_tab": "Sapphire Tutorial Tab"
 }
