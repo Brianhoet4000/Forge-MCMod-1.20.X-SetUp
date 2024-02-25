@@ -1,6 +1,7 @@
 package net.brian.testingmod;
 
 import com.mojang.logging.LogUtils;
+import net.brian.testingmod.block.ModBlocks;
 import net.brian.testingmod.item.ModCreativeModTabs;
 import net.brian.testingmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -33,6 +34,7 @@ public class TestingModMinecraft
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);
