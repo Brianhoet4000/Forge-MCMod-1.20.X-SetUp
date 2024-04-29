@@ -42,6 +42,11 @@ public class ModCreativeModTabs {
                         pOutput.accept(Items.DIAMOND);
 
 
+                        pOutput.accept(ModItems.SAPPHIRE.get());
+                        pOutput.accept(ModItems.RAW_SAPPHIRE.get());
+
+                        //Vanilla items
+                        pOutput.accept(Items.DIAMOND);
                     }).build());
 
     public static void register(IEventBus eventBus){
