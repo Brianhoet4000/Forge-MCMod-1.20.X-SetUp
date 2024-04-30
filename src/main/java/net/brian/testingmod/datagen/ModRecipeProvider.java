@@ -52,11 +52,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     private static void oreCooking(RecipeOutput pRecipeOutput, RecipeSerializer<? extends AbstractCookingRecipe> pSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pSuffix) {
-        for (ItemLike itemlike : pIngredients) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult,
-                            pExperience, pCookingTime, pSerializer)
-                    .group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(pRecipeOutput, TestingModMinecraft.MOD_ID + ":" + getItemName(pResult) + pRecipeOutput + "_" + getItemName(itemlike));
+        Iterator var9 = pIngredients.iterator();
+
+        while(var9.hasNext()) {
+            ItemLike itemlike = (ItemLike)var9.next();
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(new ItemLike[]{itemlike}), pCategory, pResult, pExperience, pCookingTime, pSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike)).save(pRecipeOutput, getItemName(pResult) + pSuffix + "_" + getItemName(itemlike));
         }
+
     }
+
 }

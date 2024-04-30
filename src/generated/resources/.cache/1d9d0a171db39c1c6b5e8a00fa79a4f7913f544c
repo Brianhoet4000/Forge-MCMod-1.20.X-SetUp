@@ -1,0 +1,6 @@
+// 1.20.2	2024-04-30T14:13:45.4307975	Tags for minecraft:block mod id testingmod
+50042d1ec96712f73f6269682ca34970b99bcb6f data/minecraft/tags/blocks/mineable/pickaxe.json
+b7a1933971bd540c59813b8702d8940072514dff data/minecraft/tags/blocks/needs_diamond_tool.json
+b72a9b1e5f1d3f8b9c1ba6c6bceec6d28317c71e data/minecraft/tags/blocks/needs_iron_tool.json
+fdcef9f01cfd8debcee426524dde5f05e4e3e728 data/minecraft/tags/blocks/needs_stone_tool.json
+25f847df408e2271f5b440795b107ee494f6df4b data/testingmod/tags/blocks/metal_detector_valuables.json

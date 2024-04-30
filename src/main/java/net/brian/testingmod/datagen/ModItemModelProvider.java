@@ -17,17 +17,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpelItem(ModItems.SAPPHIRE);
-        simpelItem(ModItems.RAW_SAPPHIRE);
+        simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.RAW_SAPPHIRE);
 
-        simpelItem(ModItems.METAL_DETECTOR);
-        simpelItem(ModItems.PINE_CONE);
-        simpelItem(ModItems.STRAWBERRY);
+        simpleItem(ModItems.METAL_DETECTOR);
+        simpleItem(ModItems.PINE_CONE);
+        simpleItem(ModItems.STRAWBERRY);
     }
 
-    private ItemModelBuilder simpelItem(RegistryObject<Item> item){
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(TestingModMinecraft.MOD_ID, "item/" + item.getId().getPath()));
+                new ResourceLocation(TestingModMinecraft.MOD_ID,"item/" + item.getId().getPath()));
     }
 }
